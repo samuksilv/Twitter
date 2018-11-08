@@ -1,4 +1,7 @@
 # Projeto de um Twitter simples 
+Este é um projeto feito a partir do evento GoWeek. Aplicando tudo que foi ensinado.
+Nesse projeto será criado um twitter bem simples, que possíbilita postar novos twitts, e os usuários consigam ver os mesmos.
+Para subir o banco de dados em mongo db foi utilizado a ferramenta: 
 
 #Técnologias utilizadas:
 --node js
