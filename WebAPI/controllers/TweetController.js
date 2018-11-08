@@ -9,7 +9,7 @@ module.exports = {
     },
     async create(req, res) {
         let tweet= await Tweet.create(req.body);
-        req.io.emit('tweet-created', tweet);        
+        req.io.emit('tweet', tweet);        
         return res.json(tweet);
     },
     async edit(req, res) { 
@@ -21,12 +21,13 @@ module.exports = {
             tweet= await Tweet.findByIdAndUpdate(req.body._id, req.body, 
                 (err,response)=>(err) ? console.warn(err) : console.log(response));
 
-        req.io.emit('tweet-updated', tweet);
+        req.io.emit('tweet', tweet);
         return res.json( tweet);
     },
     async delete(req, res) {
-        let tweet =Tweet.findOneAndDelete({ _id: req.params.id }, (err) =>(err)? console.warn(err): console.log(req.params.id));
+        let tweet =Tweet.findOneAndDelete({ _id: req.params.id }, 
+            (err) =>(err)? console.warn(err): console.log(req.params.id));
         req.io.emit('tweet-deleted', tweet);
-        return res.status(403).end();
+        return res.status(203);
     }
 };
