@@ -334,3 +334,28 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+DS_STORE
+node_modules
+scripts / flow / * /. flowconfig
+* ~
+* .pyc
+.grunhido
+_SpecRunner.html
+__benchmarks__
+construir/
+repo remoto /
+cobertura/
+.module-cache
+equipamentos / dom / public / react-dom.js
+fixtures / dom / public / react.js
+test / the-files-to-test.generated.js
+*.registro*
+chrome-user-data
+* .sublime-project
+* .sublime-workspace
+.idéia
+* .iml
+.vscode
+* .swp
+* .swo
