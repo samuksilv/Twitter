@@ -5,7 +5,9 @@ Para subir o banco de dados em mongo db foi utilizado a ferramenta:
 
 # Técnologias utilizadas:
 --node js
+
 --mongo db
+
 --react js
 
 Utilização da biblioteca Socket.io para permitir que a api envie dados para todos os clientes em tempo real.
