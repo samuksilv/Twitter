@@ -2,15 +2,15 @@ const Tweet = require('../models/Tweet');
 
 module.exports = {
     async get(req, res) {
-        return res.json(await Tweet.find({}).sort("-createdAt"));
+        return res.status(200).json(await Tweet.find({}).sort("-createdAt"));
     },
     async findByID(req, res){
-        return res.json(await Tweet.findById(req.params.id, (err)=> console.warn(err)))
+        return res.status(200).json(await Tweet.findById(req.params.id, (err)=> console.warn(err)))
     },
     async create(req, res) {
         let tweet= await Tweet.create(req.body);
         req.io.emit('tweet', tweet);        
-        return res.json(tweet);
+        return res.status(201).json(tweet);
     },
     async edit(req, res) { 
         let tweet=null;
@@ -22,7 +22,7 @@ module.exports = {
                 (err,response)=>(err) ? console.warn(err) : console.log(response));
 
         req.io.emit('tweet', tweet);
-        return res.json( tweet);
+        return res.status(200).json( tweet);
     },
     async delete(req, res) {
         let tweet =Tweet.findOneAndDelete({ _id: req.params.id }, 
