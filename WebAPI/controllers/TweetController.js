@@ -24,10 +24,10 @@ module.exports = {
         req.io.emit('tweet', tweet);
         return res.status(200).json( tweet);
     },
-    async delete(req, res) {
-        let tweet =Tweet.findOneAndDelete({ _id: req.params.id }, 
+    async delete(req, res) {       
+        let tweet =Tweet.findByIdAndDelete( req.params.id , 
             (err) =>(err)? console.warn(err): console.log(req.params.id));
-        req.io.emit('tweet-deleted', tweet);
-        return res.status(203);
+        req.io.emit('tweet_deleted', req.params.id);
+        return res.status(203).end();
     }
 };
