@@ -15,7 +15,14 @@ Assim possibilitando gerar notíficações dos novos tweets para todos os client
 
 
 # Executar a WEBAPI
-basta rodar o comando: "yarn "
+Basta rodar o comando dentro da pasta WebAPI: 
+    "yarn start"
 
 # Executar o WEBCLIENT
-basta rodar o comando: "yarn "
+Basta rodar o comando dentro da basta WebClient: 
+    "yarn start"
+
+# Executar com o Docker compose
+Basta rodar os seguintes comandos dentro da raiz do projeto:
+    1° : "docker-compose build"
+    2° : "docker-compose up"
