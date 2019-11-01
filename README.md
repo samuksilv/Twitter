@@ -14,11 +14,11 @@ Utilização da biblioteca Socket.io, que é um WeebHook para permitir que a api
 Assim possibilitando gerar notíficações dos novos tweets para todos os clientes conectados, bem como atualizando a parte Client automáticamente.
 
 
-# Executar a WEBAPI
+# Executar a API
 Basta rodar o comando dentro da pasta WebAPI:   
     "yarn start"
 
-# Executar o WEBCLIENT
+# Executar o CLIENT
 Basta rodar o comando dentro da basta WebClient:   
     "yarn start"
 
