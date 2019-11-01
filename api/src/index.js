@@ -1,11 +1,13 @@
 require('./infra/environments/environments');
-const database = require('./infra/database/database.mongo');
+const database = require('./infra/database/database-mongo');
 const express = require("express");
 const cors = require("cors");
 const morgan = require('morgan');
 var bodyParser = require('body-parser');
 
-const TweetController = require('./controllers/tweetController');
+const TweetController = require('./controllers/tweet-controller');
+const errorsHandler = require('./middlewares/error-middleware');
+const HttpError = require('./handlers/custom-erros/http-error');
 
 const app = express();
 
@@ -24,3 +26,5 @@ app.listen(port, () => {
 });
 
 app.use('/api', TweetController);
+
+app.use(errorsHandler);
