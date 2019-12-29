@@ -14,6 +14,7 @@ Utilização da biblioteca Socket.io, que é um WeebHook para permitir que a api
 Assim possibilitando gerar notíficações dos novos tweets para todos os clientes conectados, bem como atualizando a parte Client automáticamente.
 
 
+<<<<<<< HEAD
 # Executar a WEBAPI
 Basta rodar o comando dentro da pasta WebAPI: 
     "yarn start"
@@ -26,3 +27,17 @@ Basta rodar o comando dentro da basta WebClient:
 Basta rodar os seguintes comandos dentro da raiz do projeto:
     1° : "docker-compose build"
     2° : "docker-compose up"
+=======
+# Executar a API
+Basta rodar o comando dentro da pasta WebAPI:   
+    "yarn start"
+
+# Executar o CLIENT
+Basta rodar o comando dentro da basta WebClient:   
+    "yarn start"
+
+# Executar com o Docker compose
+Basta rodar os seguintes comandos dentro da raiz do projeto:  
+    1° : "docker-compose build"  
+    2° : "docker-compose up"  
+>>>>>>> 30d06c46b1d0aff5c97dededf90ad5a5db7e9ebb
