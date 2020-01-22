@@ -10,6 +10,7 @@ services:
         - mongodb
     depends_on:
         - mongodb
+        
   webclient:
     container_name: "webclient"
     build: ./WebClient
