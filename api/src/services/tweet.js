@@ -5,6 +5,7 @@ async function save(tweetReq) {
 
     if (!tweetReq.author)
         throw new HttpError("Informe o autor do tweet.", 400);
+        
     if (!tweetReq.content)
         throw new HttpError("Informe o conteudo do tweet.", 400);
 
