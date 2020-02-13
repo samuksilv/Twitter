@@ -15,12 +15,16 @@ const errorsHandler = async (error, request, response, next) => {
         message: error.message,
         stackTracer: error.stack,
       });
+
     } else {
       response.status(500).json({
         message: error.message,
         stackTracer: error.stack,
       });
     }
+    
+    return next();
+
   } catch (error) {
     console.log(error);
     next(error);

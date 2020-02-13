@@ -52,6 +52,7 @@ async function getById(id) {
         throw new HttpError("Informe um id válido.", 400);
 
     const tweet = await Tweet.findById(id);
+    
     return tweet;
 };
 
