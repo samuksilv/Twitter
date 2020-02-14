@@ -14,7 +14,7 @@ Nesse projeto será criado um twitter bem simples, que possíbilita postar novos
 Utilização da biblioteca ``socket.io``, que é um ``WebHook`` para permitir que a api envie dados para todos os clientes em tempo real.
 Assim possibilitando gerar notíficações dos novos tweets para todos os clientes conectados, bem como atualizando a aplicação cliente automáticamente.
 
-# configurações de váriaveis de ambiente do docker:
+# Configurações de váriaveis de ambiente do docker:
 
 Para rodar o projeto com docker crie um arquivo ``.env`` na raiz do projeto, e nele configure as seguintes váriaveis de ambiente, bem como seus valores( existe um arquivo de exemplo na raiz do projeto, chamado ``example.env``  que pode ser usado como base) :
 
