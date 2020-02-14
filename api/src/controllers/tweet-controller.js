@@ -12,8 +12,9 @@ route.post('/tweet', async (req, res, next) => {
 
         const tweet = await TwitterService.save(tweetRequest);
 
-        res.status(201).json(tweet);
-        next();
+        req.io.emit('tweet', tweet);
+
+        return res.status(201).json(tweet);
     } catch (error) {
         next(error);
     }
@@ -27,7 +28,9 @@ route.post('/tweet/like/:id', async (req, res, next) => {
 
         const tweet = await TwitterService.likeTweet(tweetId);
 
-        res.status(200).json(tweet);
+        req.io.emit("like", tweet);
+
+        return res.status(200).json(tweet);
 
     } catch (error) {
         next(error);
@@ -41,7 +44,9 @@ route.post('/tweet/unlike/:id', async (req, res, next) => {
 
         const tweet = await TwitterService.unlikeTweet(tweetId);
 
-        res.status(200).json(tweet);
+        req.io.emit("unlike", tweet);
+
+        return res.status(200).json(tweet);
 
     } catch (error) {
         next(error);
@@ -53,7 +58,7 @@ route.get('/tweet', async (req, res, next) => {
 
         const tweets = await TwitterService.getAll();
 
-        res.status(200).json(tweets);
+        return res.status(200).json(tweets);
 
     } catch (error) {
         next(error);
@@ -68,7 +73,7 @@ route.get('/tweet/:id', async (req, res, next) => {
         const tweet = await TwitterService.getById(tweetId);
 
         if (tweet)
-            res.status(200).json(tweet);
+            return res.status(200).json(tweet);
         else
             throw new HttpError("Tweet não encontrado", 404);
 
@@ -86,7 +91,7 @@ route.put('/tweet/:id', async (req, res, next) => {
         const tweet = await TwitterService.update(tweetId, tweetReq);
 
         if (tweet)
-            res.status(200).json(tweet);
+            return res.status(200).json(tweet);
         else
             throw new HttpError("Tweet não encontrado", 404);
 

@@ -5,6 +5,7 @@ async function save(tweetReq) {
 
     if (!tweetReq.author)
         throw new HttpError("Informe o autor do tweet.", 400);
+        
     if (!tweetReq.content)
         throw new HttpError("Informe o conteudo do tweet.", 400);
 
@@ -51,6 +52,7 @@ async function getById(id) {
         throw new HttpError("Informe um id válido.", 400);
 
     const tweet = await Tweet.findById(id);
+    
     return tweet;
 };
 
