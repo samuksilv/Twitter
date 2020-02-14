@@ -18,7 +18,6 @@ Assim possibilitando gerar notíficações dos novos tweets para todos os client
 
 Para rodar o projeto com docker crie um arquivo ``.env`` na raiz do projeto, e nele configure as seguintes váriaveis de ambiente, bem como seus valores( existe um arquivo de exemplo na raiz do projeto, chamado ``example.env``  que pode ser usado como base) :
 
----
 
 Váriaveis                      | Descrição
 -------------------------------|-----------------------------
@@ -33,8 +32,6 @@ Basta rodar os seguintes comandos dentro da ``raiz do projeto``:
 ```
  docker-compose up --build
 ```
-
-
 
 # Executar apenas a api
 Basta rodar o comando dentro da pasta ``./api`` : 
