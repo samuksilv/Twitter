@@ -28,24 +28,24 @@ MONGO_INITDB_ROOT_USERNAME     | usuário do mongodb
 MONGO_INITDB_ROOT_PASSWORD     | senha do usuário do mongodb
 
 
+# Executar aplicação web, a api e um banco de dados mongodb com docker compose
+Basta rodar os seguintes comandos dentro da ``raiz do projeto``:
+```
+ docker-compose up --build
+```
 
 
-# Executar a api
+
+# Executar apenas a api
 Basta rodar o comando dentro da pasta ``./api`` : 
 ```
  yarn start
 ```
 
-# Executar a aplicação web
+# Executar apenas a aplicação web
 Basta rodar o comando dentro da pasta ``./frontend/twitter``: 
 ```
  yarn start
-```
-
-# Executar aplicação web, a api e um banco de dados mongodb com docker compose
-Basta rodar os seguintes comandos dentro da ``raiz do projeto``:
-```
- docker-compose up --build
 ```
 
 # Executar um banco de dados mongodb com docker
