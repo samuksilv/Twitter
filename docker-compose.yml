@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  twitter-network:
+  twitter_network:
     driver: bridge
 
 services:
@@ -19,7 +19,23 @@ services:
     depends_on:
       - mongodb
     networks:
-      - twitter-network
+      - twitter_network
+
+  twitter_app:
+    build:
+      context: ./frontend/twitter/
+      dockerfile: dockerFile
+    container_name: "twitter_app"
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    links:
+      - twitter_api
+    depends_on:
+      - twitter_api
+    networks:
+      - twitter_network
 
   mongodb:
     image: mongo:latest
@@ -29,4 +45,4 @@ services:
     ports:
       - 27017:27017
     networks:
-      - twitter-network
+      - twitter_network

@@ -13,7 +13,7 @@ const app = express();
 
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const port = process.env.API_PORT || 3000;
+const port = process.env.API_PORT || 3001;
 
 app.use(morgan('dev'));
 
