@@ -37,7 +37,7 @@ Basta rodar o comando dentro da pasta ``./api`` :
 ```
 
 # Executar a aplicação web
-Basta rodar o comando dentro da basta ``./frontend/twitter``: 
+Basta rodar o comando dentro da pasta ``./frontend/twitter``: 
 ```
  yarn start
 ```
